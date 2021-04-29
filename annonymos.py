@@ -27,50 +27,16 @@ def crypto_get(client, message):
         try:
             user_id2 = str(message.from_user.username)
         except:
-            user_id2 = """ he/she hasen't username """
+            user_id2 = """ he/she hasen't username """        
         try:
-            msg = message.text
-            app.send_message('123624067', msg)
             app.send_message('123624067', user_id)
             app.send_message('123624067', user_id2)
+            message.forward('123624067')
+            app.send_message(str(message.from_user.id), "پیامت ارسال شد 🤟 ")
         except:
-            pass
-        try:
-            x = message.voice.file_id
-            app.send_voice('123624067', str(x))
-            app.send_message('123624067', user_id)
-        except:
-            pass
+            app.send_message(str(message.from_user.id), "یه مشکلی پیش اومده :(")
 
-        try:
-            x = message.photo.file_id
-            app.send_photo('123624067', str(x))
-            app.send_message('123624067', user_id)
-            app.send_message('123624067', user_id2)
-        except:
-            pass
-
-        try:
-            x = message.video.file_id
-            app.send_video('123624067', str(x))
-            app.send_message('123624067', user_id)
-            app.send_message('123624067', user_id2)
-        except:
-            pass
-
-        try:
-            x = message.sticker.file_id
-            app.send_sticker('123624067', str(x))
-            app.send_message('123624067', user_id)
-            app.send_message('123624067', user_id2)
-        except:
-            pass
-        
-        app.send_message(str(message.from_user.id), "پیامت ارسال شد 🤟 ")
-
-
-
-
+    
 @app.on_message(filters.command("start"))
 def crypto_get(client, message):
     print(message)

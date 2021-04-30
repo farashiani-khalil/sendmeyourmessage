@@ -3,7 +3,7 @@ from pyrogram import Client, filters
 
 app = Client(
     "my_bot",
-    bot_token="1740908550:AAEn1xHJjfJlPZUg2HsEvY1nwTQ5UxcwigY"
+    bot_token="1740908550:AUg2HsEvY1nwTQ5UxcwigY"
 )
 
 
